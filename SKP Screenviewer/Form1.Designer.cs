@@ -62,6 +62,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Share Screen";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 
@@ -89,7 +90,6 @@
             this.label1.Size = new System.Drawing.Size(112, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Connection String";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -134,12 +134,11 @@
             this.TeamViewer.AutoSize = true;
             this.TeamViewer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TeamViewer.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.TeamViewer.Location = new System.Drawing.Point(21, 25);
+            this.TeamViewer.Location = new System.Drawing.Point(25, 27);
             this.TeamViewer.Name = "TeamViewer";
             this.TeamViewer.Size = new System.Drawing.Size(159, 20);
             this.TeamViewer.TabIndex = 0;
             this.TeamViewer.Text = "SKP ScreenViewer";
-            this.TeamViewer.Click += new System.EventHandler(this.TeamViewer_Click);
             // 
             // label3
             // 
@@ -155,7 +154,6 @@
             this.label3.Size = new System.Drawing.Size(343, 37);
             this.label3.TabIndex = 8;
             this.label3.Text = "Waiting for Connection";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox1
             // 
