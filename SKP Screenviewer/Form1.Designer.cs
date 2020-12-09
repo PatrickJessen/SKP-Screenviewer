@@ -30,8 +30,6 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SidePanel = new System.Windows.Forms.GroupBox();
@@ -39,6 +37,8 @@
             this.TeamViewer = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textBoxExControl1 = new WindowsFormsApp4.TextBoxExControl();
+            this.textBoxExControl2 = new WindowsFormsApp4.TextBoxExControl();
             this.SidePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,23 +63,6 @@
             this.button2.Text = "Share Screen";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(2, 163);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(201, 20);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.textBox2.Location = new System.Drawing.Point(41, 78);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "80";
             // 
             // label1
             // 
@@ -107,8 +90,8 @@
             this.SidePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.SidePanel.BackColor = System.Drawing.Color.DarkGray;
-            this.SidePanel.Controls.Add(this.textBox2);
-            this.SidePanel.Controls.Add(this.textBox1);
+            this.SidePanel.Controls.Add(this.textBoxExControl2);
+            this.SidePanel.Controls.Add(this.textBoxExControl1);
             this.SidePanel.Controls.Add(this.button1);
             this.SidePanel.Controls.Add(this.button2);
             this.SidePanel.Controls.Add(this.label2);
@@ -163,6 +146,22 @@
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
+            // textBoxExControl1
+            // 
+            this.textBoxExControl1.Location = new System.Drawing.Point(41, 77);
+            this.textBoxExControl1.Name = "textBoxExControl1";
+            this.textBoxExControl1.Placeholder = "80";
+            this.textBoxExControl1.Size = new System.Drawing.Size(100, 20);
+            this.textBoxExControl1.TabIndex = 6;
+            // 
+            // textBoxExControl2
+            // 
+            this.textBoxExControl2.Location = new System.Drawing.Point(6, 163);
+            this.textBoxExControl2.Name = "textBoxExControl2";
+            this.textBoxExControl2.Placeholder = "Type in string";
+            this.textBoxExControl2.Size = new System.Drawing.Size(174, 20);
+            this.textBoxExControl2.TabIndex = 7;
+            // 
             // SKPScreenViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,8 +190,6 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox SidePanel;
@@ -200,6 +197,8 @@
         private System.Windows.Forms.Label TeamViewer;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private WindowsFormsApp4.TextBoxExControl textBoxExControl1;
+        private WindowsFormsApp4.TextBoxExControl textBoxExControl2;
     }
 }
 
