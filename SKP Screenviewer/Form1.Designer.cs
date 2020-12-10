@@ -28,41 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.connect = new System.Windows.Forms.Button();
+            this.share = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SidePanel = new System.Windows.Forms.GroupBox();
+            this.listen = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TeamViewer = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.waitText = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBoxExControl1 = new WindowsFormsApp4.TextBoxExControl();
-            this.textBoxExControl2 = new WindowsFormsApp4.TextBoxExControl();
+            this.port2 = new WindowsFormsApp4.TextBoxExControl();
+            this.conId = new WindowsFormsApp4.TextBoxExControl();
+            this.port = new WindowsFormsApp4.TextBoxExControl();
             this.SidePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // connect
             // 
-            this.button1.Location = new System.Drawing.Point(10, 243);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Connect";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.connect.Location = new System.Drawing.Point(10, 243);
+            this.connect.Name = "connect";
+            this.connect.Size = new System.Drawing.Size(75, 23);
+            this.connect.TabIndex = 0;
+            this.connect.Text = "Connect";
+            this.connect.UseVisualStyleBackColor = true;
+            this.connect.Click += new System.EventHandler(this.ConnectionClickEvent);
             // 
-            // button2
+            // share
             // 
-            this.button2.Location = new System.Drawing.Point(91, 243);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Share Screen";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.share.Location = new System.Drawing.Point(91, 243);
+            this.share.Name = "share";
+            this.share.Size = new System.Drawing.Size(93, 23);
+            this.share.TabIndex = 1;
+            this.share.Text = "Share Screen";
+            this.share.UseVisualStyleBackColor = true;
+            this.share.Click += new System.EventHandler(this.ShareScreenClickEvent);
             // 
             // label1
             // 
@@ -90,26 +95,50 @@
             this.SidePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.SidePanel.BackColor = System.Drawing.Color.DarkGray;
-            this.SidePanel.Controls.Add(this.textBoxExControl2);
-            this.SidePanel.Controls.Add(this.textBoxExControl1);
-            this.SidePanel.Controls.Add(this.button1);
-            this.SidePanel.Controls.Add(this.button2);
+            this.SidePanel.Controls.Add(this.listen);
+            this.SidePanel.Controls.Add(this.port2);
+            this.SidePanel.Controls.Add(this.label3);
+            this.SidePanel.Controls.Add(this.conId);
+            this.SidePanel.Controls.Add(this.port);
+            this.SidePanel.Controls.Add(this.connect);
+            this.SidePanel.Controls.Add(this.share);
             this.SidePanel.Controls.Add(this.label2);
             this.SidePanel.Controls.Add(this.label1);
-            this.SidePanel.Location = new System.Drawing.Point(2, 76);
+            this.SidePanel.Location = new System.Drawing.Point(-3, 76);
             this.SidePanel.Name = "SidePanel";
-            this.SidePanel.Size = new System.Drawing.Size(209, 415);
+            this.SidePanel.Size = new System.Drawing.Size(214, 423);
             this.SidePanel.TabIndex = 6;
             this.SidePanel.TabStop = false;
             this.SidePanel.Text = "Menu";
+            // 
+            // listen
+            // 
+            this.listen.Location = new System.Drawing.Point(50, 354);
+            this.listen.Name = "listen";
+            this.listen.Size = new System.Drawing.Size(75, 23);
+            this.listen.TabIndex = 11;
+            this.listen.Text = "Listen";
+            this.listen.UseVisualStyleBackColor = true;
+            this.listen.Click += new System.EventHandler(this.listen_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label3.Location = new System.Drawing.Point(3, 309);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 16);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "Port";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Chocolate;
             this.panel1.Controls.Add(this.TeamViewer);
-            this.panel1.Location = new System.Drawing.Point(2, 0);
+            this.panel1.Location = new System.Drawing.Point(-6, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(209, 76);
+            this.panel1.Size = new System.Drawing.Size(217, 76);
             this.panel1.TabIndex = 7;
             // 
             // TeamViewer
@@ -123,44 +152,56 @@
             this.TeamViewer.TabIndex = 0;
             this.TeamViewer.Text = "SKP ScreenViewer";
             // 
-            // label3
+            // waitText
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.waitText.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label3.Location = new System.Drawing.Point(415, 199);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(343, 37);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Waiting for Connection";
+            this.waitText.AutoSize = true;
+            this.waitText.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.waitText.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.waitText.ForeColor = System.Drawing.SystemColors.ButtonShadow;
+            this.waitText.Location = new System.Drawing.Point(415, 199);
+            this.waitText.Name = "waitText";
+            this.waitText.Size = new System.Drawing.Size(343, 37);
+            this.waitText.TabIndex = 8;
+            this.waitText.Text = "Waiting for Connection";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(217, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(209, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(714, 491);
+            this.pictureBox1.Size = new System.Drawing.Size(721, 493);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // textBoxExControl1
+            // port2
             // 
-            this.textBoxExControl1.Location = new System.Drawing.Point(41, 77);
-            this.textBoxExControl1.Name = "textBoxExControl1";
-            this.textBoxExControl1.Placeholder = "80";
-            this.textBoxExControl1.Size = new System.Drawing.Size(100, 20);
-            this.textBoxExControl1.TabIndex = 6;
+            this.port2.Location = new System.Drawing.Point(41, 308);
+            this.port2.Name = "port2";
+            this.port2.Placeholder = "";
+            this.port2.Size = new System.Drawing.Size(100, 20);
+            this.port2.TabIndex = 10;
             // 
-            // textBoxExControl2
+            // conId
             // 
-            this.textBoxExControl2.Location = new System.Drawing.Point(6, 163);
-            this.textBoxExControl2.Name = "textBoxExControl2";
-            this.textBoxExControl2.Placeholder = "Type in string";
-            this.textBoxExControl2.Size = new System.Drawing.Size(174, 20);
-            this.textBoxExControl2.TabIndex = 7;
+            this.conId.Location = new System.Drawing.Point(6, 163);
+            this.conId.Name = "conId";
+            this.conId.Placeholder = "";
+            this.conId.Size = new System.Drawing.Size(174, 20);
+            this.conId.TabIndex = 7;
+            // 
+            // port
+            // 
+            this.port.Location = new System.Drawing.Point(41, 77);
+            this.port.Name = "port";
+            this.port.Placeholder = "";
+            this.port.Size = new System.Drawing.Size(100, 20);
+            this.port.TabIndex = 6;
             // 
             // SKPScreenViewer
             // 
@@ -170,7 +211,7 @@
             this.ClientSize = new System.Drawing.Size(929, 492);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.waitText);
             this.Controls.Add(this.SidePanel);
             this.Controls.Add(this.pictureBox1);
             this.Name = "SKPScreenViewer";
@@ -188,17 +229,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button connect;
+        private System.Windows.Forms.Button share;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox SidePanel;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label TeamViewer;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label waitText;
+        private WindowsFormsApp4.TextBoxExControl port;
+        private WindowsFormsApp4.TextBoxExControl conId;
+        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private WindowsFormsApp4.TextBoxExControl textBoxExControl1;
-        private WindowsFormsApp4.TextBoxExControl textBoxExControl2;
+        private System.Windows.Forms.Button listen;
+        private WindowsFormsApp4.TextBoxExControl port2;
+        private System.Windows.Forms.Label label3;
     }
 }
 

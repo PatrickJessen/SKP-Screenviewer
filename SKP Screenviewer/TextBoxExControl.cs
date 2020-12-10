@@ -25,13 +25,25 @@ namespace WindowsFormsApp4
 
         private void TB_Textbox_GotFocus(object sender, EventArgs e)
         {
-            Text = "";
+            if (CheckText())
+            {
+                Text = "";
+            }
         }
 
         private void TB_Textbox_LostFocus(object sender, EventArgs e)
         {
             if (Text == "")
                 Text = Placeholder;
+        }
+
+        private bool CheckText()
+        {
+            if (Placeholder == Text)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
