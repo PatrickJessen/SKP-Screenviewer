@@ -96,11 +96,5 @@ namespace SKP_Screenviewer
         {
 
         }
-
-        private void listen_Click(object sender, EventArgs e)
-        {
-            new Form2(int.Parse(port2.Text)).Show();
-            listen.Enabled = false;
-        }
     }
 }

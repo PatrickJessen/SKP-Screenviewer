@@ -34,17 +34,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SidePanel = new System.Windows.Forms.GroupBox();
-            this.listen = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.conId = new WindowsFormsApp4.TextBoxExControl();
+            this.port = new WindowsFormsApp4.TextBoxExControl();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TeamViewer = new System.Windows.Forms.Label();
             this.waitText = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.port2 = new WindowsFormsApp4.TextBoxExControl();
-            this.conId = new WindowsFormsApp4.TextBoxExControl();
-            this.port = new WindowsFormsApp4.TextBoxExControl();
             this.SidePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -107,9 +104,6 @@
             this.SidePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.SidePanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.SidePanel.Controls.Add(this.listen);
-            this.SidePanel.Controls.Add(this.port2);
-            this.SidePanel.Controls.Add(this.label3);
             this.SidePanel.Controls.Add(this.conId);
             this.SidePanel.Controls.Add(this.port);
             this.SidePanel.Controls.Add(this.connect);
@@ -122,31 +116,28 @@
             this.SidePanel.TabIndex = 6;
             this.SidePanel.TabStop = false;
             // 
-            // listen
+            // conId
             // 
-            this.listen.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.listen.FlatAppearance.BorderSize = 3;
-            this.listen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.listen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listen.ForeColor = System.Drawing.Color.Gainsboro;
-            this.listen.Location = new System.Drawing.Point(3, 335);
-            this.listen.Name = "listen";
-            this.listen.Size = new System.Drawing.Size(208, 27);
-            this.listen.TabIndex = 11;
-            this.listen.Text = "Listen";
-            this.listen.UseVisualStyleBackColor = true;
-            this.listen.Click += new System.EventHandler(this.listen_Click);
+            this.conId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.conId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conId.ForeColor = System.Drawing.Color.Gainsboro;
+            this.conId.Location = new System.Drawing.Point(6, 170);
+            this.conId.Multiline = true;
+            this.conId.Name = "conId";
+            this.conId.Placeholder = "";
+            this.conId.Size = new System.Drawing.Size(202, 37);
+            this.conId.TabIndex = 7;
             // 
-            // label3
+            // port
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label3.Location = new System.Drawing.Point(7, 236);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 16);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Port Number";
+            this.port.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.port.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.port.ForeColor = System.Drawing.Color.Gainsboro;
+            this.port.Location = new System.Drawing.Point(6, 97);
+            this.port.Name = "port";
+            this.port.Placeholder = "";
+            this.port.Size = new System.Drawing.Size(202, 22);
+            this.port.TabIndex = 6;
             // 
             // panel1
             // 
@@ -204,41 +195,6 @@
             this.panel2.Size = new System.Drawing.Size(718, 76);
             this.panel2.TabIndex = 10;
             // 
-            // port2
-            // 
-            this.port2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.port2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.port2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.port2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.port2.Location = new System.Drawing.Point(6, 255);
-            this.port2.Name = "port2";
-            this.port2.Placeholder = "";
-            this.port2.Size = new System.Drawing.Size(198, 22);
-            this.port2.TabIndex = 10;
-            // 
-            // conId
-            // 
-            this.conId.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.conId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.conId.ForeColor = System.Drawing.Color.Gainsboro;
-            this.conId.Location = new System.Drawing.Point(6, 170);
-            this.conId.Multiline = true;
-            this.conId.Name = "conId";
-            this.conId.Placeholder = "";
-            this.conId.Size = new System.Drawing.Size(202, 37);
-            this.conId.TabIndex = 7;
-            // 
-            // port
-            // 
-            this.port.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.port.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.port.ForeColor = System.Drawing.Color.Gainsboro;
-            this.port.Location = new System.Drawing.Point(6, 97);
-            this.port.Name = "port";
-            this.port.Placeholder = "";
-            this.port.Size = new System.Drawing.Size(202, 22);
-            this.port.TabIndex = 6;
-            // 
             // SKPScreenViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -278,9 +234,6 @@
         private WindowsFormsApp4.TextBoxExControl conId;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button listen;
-        private WindowsFormsApp4.TextBoxExControl port2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
     }
 }
