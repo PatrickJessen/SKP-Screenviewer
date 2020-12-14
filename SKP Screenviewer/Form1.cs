@@ -42,6 +42,7 @@ namespace SKP_Screenviewer
         {
 
             InitializeComponent();
+            
         }
 
 
